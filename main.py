@@ -1,38 +1,51 @@
-import streamlit as st
-import pandas as pd
 import numpy as np
+import pickle
+import streamlit as st
 
-st.title('Uber pickups in NYC')
-
-DATE_COLUMN = 'date/time'
-DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
-            'streamlit-demo-data/uber-raw-data-sep14.csv.gz')
-
-
-@st.cache_data
-def load_data(nrows):
-    data = pd.read_csv(DATA_URL, nrows=nrows)
-    lowercase = lambda x: str(x).lower()
-    data.rename(lowercase, axis='columns', inplace=True)
-    data[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN])
-    return data
+# loading the saved model
+loaded_model = pickle.load(open('./trained_model.sav', 'rb'))
 
 
-data_load_state = st.text('Loading data...')
-data = load_data(10000)
-data_load_state.text("Done! (using st.cache_data)")
+# creating a function for Prediction
+def diabetes_prediction(input_data):
+    # changing the input_data to numpy array
+    input_data_as_numpy_array = np.asarray(input_data)
 
-if st.checkbox('Show raw data'):
-    st.subheader('Raw data')
-    st.write(data)
+    # reshape the array as we are predicting for one instance
+    input_data_reshaped = input_data_as_numpy_array.reshape(1, -1)
 
-st.subheader('Number of pickups by hour')
-hist_values = np.histogram(data[DATE_COLUMN].dt.hour, bins=24, range=(0,24))[0]
-st.bar_chart(hist_values)
+    prediction = loaded_model.predict(input_data_reshaped)
+    print(prediction)
 
-# Some number in the range 0-23
-hour_to_filter = st.slider('hour', 0, 23, 17)
-filtered_data = data[data[DATE_COLUMN].dt.hour == hour_to_filter]
+    if prediction[0] == 0:
+        return 'The person is not diabetic'
+    else:
+        return 'The person is diabetic'
 
-st.subheader('Map of all pickups at %s:00' % hour_to_filter)
-st.map(filtered_data)
+
+if __name__ == '__main__':
+    # giving a title
+    st.title('Diabetes Prediction Web App')
+
+    # getting the input data from the user
+
+    Pregnancies = st.text_input('Number of Pregnancies')
+    Glucose = st.text_input('Glucose Level')
+    BloodPressure = st.text_input('Blood Pressure value')
+    SkinThickness = st.text_input('Skin Thickness value')
+    Insulin = st.text_input('Insulin Level')
+    BMI = st.text_input('BMI value')
+    DiabetesPedigreeFunction = st.text_input('Diabetes Pedigree Function value')
+    Age = st.text_input('Age of the Person')
+
+    # code for Prediction
+    diagnosis = ''
+
+    # creating a button for Prediction
+
+    if st.button('Diabetes Test Result'):
+        diagnosis = diabetes_prediction(
+            [Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age])
+
+    st.success(diagnosis)
+
