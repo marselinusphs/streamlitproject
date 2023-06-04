@@ -28,5 +28,5 @@ test_data_accuracy = accuracy_score(X_test_prediction, Y_test)
 
 print('Accuracy score of the test data : ', test_data_accuracy)
 
-filename = 'trained_model.sav'
+filename = 'diabetes_model.sav'
 pickle.dump(classifier, open(filename, 'wb'))
