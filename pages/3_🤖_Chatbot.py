@@ -72,7 +72,7 @@ def chatbot_response(msg):
 
 
 def get_text():
-    input_text = st.text_input("You: ", "Hai", key="input")
+    input_text = st.text_input("You: ", "", key="input")
     return input_text
 
 
