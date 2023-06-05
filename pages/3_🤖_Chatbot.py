@@ -1,4 +1,6 @@
 import streamlit as st
+nltk.download('punkt')
+nltk.download('wordnet')
 from streamlit_chat import message
 
 import nltk
