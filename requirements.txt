@@ -3,3 +3,5 @@ tensorflow
 streamlit~=1.22.0
 pandas~=2.0.1
 scikit-learn~=1.2.2
+nltk==3.8.1
+streamlit-chat==0.0.2.2

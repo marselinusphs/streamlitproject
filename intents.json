@@ -1,0 +1,54 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Halo", "Hai", "Selamat pagi", "Selamat siang"],
+      "responses": ["Halo! Selamat datang di informasi konser Coldplay. Ada yang bisa saya bantu?", "Hai! Bagaimana saya bisa membantu Anda tentang konser Coldplay?"]
+    },
+    {
+      "tag": "concert_date",
+      "patterns": ["Kapan konser Coldplay akan dilaksanakan?", "Tanggal berapa konser Coldplay?", "Kapan acara konsernya?"],
+      "responses": ["Konser Coldplay akan dilaksanakan pada tanggal 15 September 2023.", "Tanggal konser Coldplay adalah 15 September 2023."]
+    },
+    {
+      "tag": "ticket_price",
+      "patterns": ["Berapa harga tiket konser Coldplay?", "Apa harga tiket untuk konser Coldplay?", "Harga tiketnya berapa?"],
+      "responses": ["Harga tiket konser Coldplay bervariasi tergantung pada jenis tempat duduk. Rentang harga tiket berkisar dari $100 hingga $500.", "Harga tiket untuk konser Coldplay mulai dari $100 hingga $500, tergantung pada kategori tempat duduk yang Anda pilih."]
+    },
+    {
+      "tag": "ticket_availability",
+      "patterns": ["Apakah masih ada tiket tersedia untuk konser Coldplay?", "Apakah tiketnya masih ada?", "Bisakah saya mendapatkan tiket untuk konser Coldplay?"],
+      "responses": ["Status ketersediaan tiket dapat berubah. Mohon hubungi pusat penjualan tiket resmi atau situs web resmi untuk memeriksa ketersediaan tiket terbaru.", "Ketersediaan tiket dapat berubah setiap saat. Disarankan untuk mengunjungi situs web resmi atau menghubungi pusat penjualan tiket resmi untuk mendapatkan informasi terbaru tentang ketersediaan tiket."]
+    },
+    {
+      "tag": "venue_info",
+      "patterns": ["Di mana lokasi konser Coldplay?", "Tempat konser Coldplay di mana?", "Dimana tempat konsernya?"],
+      "responses": ["Konser Coldplay akan berlangsung di Stadion XYZ, yang terletak di Kota ABC.", "Tempat konser Coldplay adalah Stadion XYZ di Kota ABC."]
+    },
+    {
+      "tag": "concert_duration",
+      "patterns": ["Berapa lama durasi konser Coldplay?", "Berapa jam konsernya?", "Berapa lama acara konsernya?"],
+      "responses": ["Konser Coldplay diperkirakan berlangsung selama sekitar 2,5 jam hingga 3 jam.", "Durasi konser Coldplay adalah sekitar 2,5 jam hingga 3 jam."]
+    },
+    {
+      "tag": "supporting_act",
+      "patterns": ["Siapa band pembuka untuk konser Coldplay?", "Apakah ada band pendukung dalam acara konser?", "Ada band pembuka lainnya?"],
+      "responses": ["Ya, ada band pembuka untuk konser Coldplay. Band pendukung yang akan tampil adalah ABC Band dan XYZ Band.", "Kami senang dapat mengumumkan bahwa ada band pembuka yang akan tampil sebelum Coldplay. Band pendukung yang akan tampil adalah ABC Band dan XYZ Band."]
+    },
+    {
+      "tag": "age_restriction",
+      "patterns": ["Apakah ada batasan usia untuk menghadiri konser Coldplay?", "Apakah ada batasan umur untuk masuk ke konser?", "Siapa saja yang boleh hadir dalam acara ini?"],
+      "responses": ["Konser Coldplay terbuka untuk semua usia. Tidak ada batasan usia untuk masuk ke acara ini.", "Konser Coldplay adalah acara yang dapat dihadiri oleh semua kalangan usia. Tidak ada batasan usia untuk menghadiri konser ini."]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Terima kasih", "Sampai jumpa", "Selamat tinggal"],
+      "responses": ["Terima kasih telah menghubungi. Jika Anda memiliki pertanyaan lain tentang konser Coldplay, jangan ragu untuk menghubungi kami.", "Sampai jumpa! Semoga Anda menikmati konser Coldplay. Jika Anda memiliki pertanyaan lain, silakan hubungi kami."]
+    },
+    {
+      "tag": "fallback",
+      "patterns": ["", "Tidak mengerti", "Bisakah Anda mengulanginya?", "Saya tidak mengerti jawaban Anda"],
+      "responses": ["Maaf, saya tidak dapat memahami permintaan Anda tentang konser Coldplay. Mohon beri tahu saya dengan kata lain atau ajukan pertanyaan yang berbeda.", "Maaf, sepertinya ada ketidakjelasan. Bisakah Anda mengajukan pertanyaan atau mengungkapkan kebutuhan Anda dengan kata lain?"]
+    }
+  ]
+}
