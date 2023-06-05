@@ -30,7 +30,7 @@ def predict(image):
 
 
 if __name__ == '__main__':
-    st.title("Upload + Classification Example")
+    st.title("Image Classification Example")
 
     uploaded_file = st.file_uploader("Choose an image...", type="jpg")
     if uploaded_file is not None:

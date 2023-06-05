@@ -41,8 +41,11 @@ if __name__ == '__main__':
 
     # creating a button for Prediction
     if st.button('Diabetes Test Result'):
-        diagnosis = diabetes_prediction(
-            [pregnancies, glucose, bloodPressure, skinThickness, insulin, bmi, diabetesPedigreeFunction, age]
-        )
+        try:
+            diagnosis = diabetes_prediction(
+                [pregnancies, glucose, bloodPressure, skinThickness, insulin, bmi, diabetesPedigreeFunction, age]
+            )
+        except:
+            diagnosis = "Pastikan input valid!"
 
     st.success(diagnosis)
