@@ -2,53 +2,78 @@
   "intents": [
     {
       "tag": "greeting",
-      "patterns": ["Halo", "Hai", "Selamat pagi", "Selamat siang"],
-      "responses": ["Halo! Selamat datang di informasi konser Coldplay. Ada yang bisa saya bantu?", "Hai! Bagaimana saya bisa membantu Anda tentang konser Coldplay?"]
+      "patterns": ["Halo", "Hai", "Selamat pagi", "Selamat siang", "Selamat malam"],
+      "responses": ["Halo! Selamat datang di chatbot acara konser Coldplay. Ada yang bisa saya bantu?", "Hai! Apa yang bisa saya bantu tentang konser Coldplay?"]
     },
     {
-      "tag": "concert_date",
-      "patterns": ["Kapan konser Coldplay akan dilaksanakan?", "Tanggal berapa konser Coldplay?", "Kapan acara konsernya?"],
-      "responses": ["Konser Coldplay akan dilaksanakan pada tanggal 15 September 2023.", "Tanggal konser Coldplay adalah 15 September 2023."]
+      "tag": "schedule",
+      "patterns": ["Jadwal konser", "Kapan konser Coldplay", "Tanggal konser"],
+      "responses": ["Konser Coldplay akan berlangsung pada tanggal 10 Juni 2023. Acara dimulai pukul 19:00."]
     },
     {
-      "tag": "ticket_price",
-      "patterns": ["Berapa harga tiket konser Coldplay?", "Apa harga tiket untuk konser Coldplay?", "Harga tiketnya berapa?"],
-      "responses": ["Harga tiket konser Coldplay bervariasi tergantung pada jenis tempat duduk. Rentang harga tiket berkisar dari $100 hingga $500.", "Harga tiket untuk konser Coldplay mulai dari $100 hingga $500, tergantung pada kategori tempat duduk yang Anda pilih."]
+      "tag": "venue",
+      "patterns": ["Lokasi konser", "Dimana konser Coldplay", "Venue konser"],
+      "responses": ["Konser Coldplay akan diadakan di Stadion Gelora Bung Karno, Jakarta. Stadion ini terletak di Jalan Pintu Satu Senayan, Jakarta Pusat. Anda dapat menggunakan transportasi umum seperti kereta, bus, atau taksi untuk mencapai lokasi konser."]
     },
     {
-      "tag": "ticket_availability",
-      "patterns": ["Apakah masih ada tiket tersedia untuk konser Coldplay?", "Apakah tiketnya masih ada?", "Bisakah saya mendapatkan tiket untuk konser Coldplay?"],
-      "responses": ["Status ketersediaan tiket dapat berubah. Mohon hubungi pusat penjualan tiket resmi atau situs web resmi untuk memeriksa ketersediaan tiket terbaru.", "Ketersediaan tiket dapat berubah setiap saat. Disarankan untuk mengunjungi situs web resmi atau menghubungi pusat penjualan tiket resmi untuk mendapatkan informasi terbaru tentang ketersediaan tiket."]
+      "tag": "tickets",
+      "patterns": ["Tiket konser", "Bagaimana cara mendapatkan tiket", "Harga tiket"],
+      "responses": ["Anda dapat membeli tiket konser Coldplay melalui situs resmi penyelenggara atau melalui partner penjualan tiket. Harga tiket bervariasi tergantung pada kategori dan lokasi duduk. Jangan ragu untuk mengunjungi situs web resmi acara untuk informasi lebih lanjut tentang harga dan ketersediaan tiket."]
     },
     {
-      "tag": "venue_info",
-      "patterns": ["Di mana lokasi konser Coldplay?", "Tempat konser Coldplay di mana?", "Dimana tempat konsernya?"],
-      "responses": ["Konser Coldplay akan berlangsung di Stadion XYZ, yang terletak di Kota ABC.", "Tempat konser Coldplay adalah Stadion XYZ di Kota ABC."]
+      "tag": "seating",
+      "patterns": ["Kategori tempat duduk", "Bagaimana dengan kategori tempat duduk"],
+      "responses": ["Konser Coldplay memiliki beberapa kategori tempat duduk, seperti tribun VIP, tribun reguler, dan area festival standing. Setiap kategori memiliki harga tiket yang berbeda. Anda dapat memilih kategori yang sesuai dengan preferensi Anda. Pastikan untuk memesan tiket sesuai dengan keinginan Anda sejak awal karena kategori-kategori tertentu mungkin cepat terjual habis."]
     },
     {
-      "tag": "concert_duration",
-      "patterns": ["Berapa lama durasi konser Coldplay?", "Berapa jam konsernya?", "Berapa lama acara konsernya?"],
-      "responses": ["Konser Coldplay diperkirakan berlangsung selama sekitar 2,5 jam hingga 3 jam.", "Durasi konser Coldplay adalah sekitar 2,5 jam hingga 3 jam."]
+      "tag": "payment",
+      "patterns": ["Cara pembayaran tiket", "Metode pembayaran"],
+      "responses": ["Anda dapat melakukan pembayaran tiket konser Coldplay menggunakan kartu kredit, transfer bank, atau melalui metode pembayaran online yang disediakan oleh situs penyelenggara. Pastikan untuk mengikuti instruksi pembayaran yang tertera pada situs resmi acara. Jika Anda mengalami kendala, jangan ragu untuk menghubungi tim layanan pelanggan mereka."]
     },
     {
-      "tag": "supporting_act",
-      "patterns": ["Siapa band pembuka untuk konser Coldplay?", "Apakah ada band pendukung dalam acara konser?", "Ada band pembuka lainnya?"],
-      "responses": ["Ya, ada band pembuka untuk konser Coldplay. Band pendukung yang akan tampil adalah ABC Band dan XYZ Band.", "Kami senang dapat mengumumkan bahwa ada band pembuka yang akan tampil sebelum Coldplay. Band pendukung yang akan tampil adalah ABC Band dan XYZ Band."]
+      "tag": "parking",
+      "patterns": ["Parkir", "Tempat parkir", "Biaya parkir"],
+      "responses": ["Stadion Gelora Bung Karno memiliki area parkir yang cukup luas. Biaya parkir akan ditentukan oleh pihak penyelenggara dan akan diinformasikan lebih lanjut sebelum acara. Pastikan Anda tiba lebih awal untuk mendapatkan tempat parkir yang nyaman dan menghindari kemacetan."]
     },
     {
-      "tag": "age_restriction",
-      "patterns": ["Apakah ada batasan usia untuk menghadiri konser Coldplay?", "Apakah ada batasan umur untuk masuk ke konser?", "Siapa saja yang boleh hadir dalam acara ini?"],
-      "responses": ["Konser Coldplay terbuka untuk semua usia. Tidak ada batasan usia untuk masuk ke acara ini.", "Konser Coldplay adalah acara yang dapat dihadiri oleh semua kalangan usia. Tidak ada batasan usia untuk menghadiri konser ini."]
+      "tag": "food",
+      "patterns": ["Makanan dan minuman", "Ada makanan di konser", "Bisa bawa makanan"],
+      "responses": ["Di konser Coldplay akan disediakan berbagai pilihan makanan dan minuman di area makanan. Anda dapat menikmati hidangan lezat seperti makanan cepat saji, camilan, minuman ringan, dan masih banyak lagi. Namun, biasanya tidak diperbolehkan membawa makanan dari luar ke dalam venue konser."]
     },
     {
-      "tag": "goodbye",
-      "patterns": ["Terima kasih", "Sampai jumpa", "Selamat tinggal"],
-      "responses": ["Terima kasih telah menghubungi. Jika Anda memiliki pertanyaan lain tentang konser Coldplay, jangan ragu untuk menghubungi kami.", "Sampai jumpa! Semoga Anda menikmati konser Coldplay. Jika Anda memiliki pertanyaan lain, silakan hubungi kami."]
+      "tag": "weather",
+      "patterns": ["Cuaca", "Bagaimana cuaca di konser", "Pakaian"],
+      "responses": ["Pastikan Anda memeriksa perkiraan cuaca sebelum pergi ke konser Coldplay. Cuaca di Jakarta pada bulan Juni umumnya cukup hangat, namun bisa juga berubah-ubah. Disarankan untuk mengenakan pakaian yang nyaman seperti kaos dan celana pendek atau rok. Jangan lupa bawa mantel atau payung jika cuaca mendung atau berpotensi hujan."]
+    },
+    {
+      "tag": "age_limit",
+      "patterns": ["Batas usia", "Siapa yang boleh masuk", "Tiket untuk anak-anak"],
+      "responses": ["Konser Coldplay hanya boleh diikuti oleh penonton berusia 18 tahun ke atas. Anak-anak di bawah usia tersebut harus didampingi oleh orang dewasa dan memiliki tiket yang sesuai. Pastikan untuk membawa identitas yang sah sebagai bukti usia Anda saat memasuki venue konser."]
+    },
+    {
+      "tag": "disabled_access",
+      "patterns": ["Akses disabilitas", "Fasilitas disabilitas"],
+      "responses": ["Stadion Gelora Bung Karno menyediakan fasilitas akses bagi penyandang disabilitas. Jika Anda atau seseorang yang Anda dampingi membutuhkan bantuan khusus, silakan menghubungi pihak penyelenggara sebelum acara untuk pengaturan lebih lanjut. Mereka akan dengan senang hati membantu memastikan pengalaman konser yang nyaman bagi semua penonton."]
+    },
+    {
+      "tag": "merchandise",
+      "patterns": ["Barang dagangan", "Merchandise", "Apa saja yang dijual di konser"],
+      "responses": ["Anda dapat membeli berbagai merchandise resmi Coldplay di area merchandise konser. Diantaranya adalah kaus, topi, jaket, poster, dan album terbaru mereka. Pastikan untuk menyediakan uang tunai atau kartu pembayaran untuk membeli merchandise yang Anda sukai."]
+    },
+    {
+      "tag": "cancellation",
+      "patterns": ["Batal konser", "Dibatalkan", "Pengembalian uang"],
+      "responses": ["Hingga saat ini, tidak ada pengumuman pembatalan konser Coldplay. Namun, jika terjadi perubahan atau pembatalan acara, pihak penyelenggara akan memberikan informasi lebih lanjut melalui situs resmi acara dan kontak yang terdaftar pada tiket Anda. Pengembalian uang akan diatur sesuai dengan kebijakan penyelenggara."]
+    },
+    {
+      "tag": "thankyou",
+      "patterns": ["Terima kasih", "Makasih", "Terimakasih"],
+      "responses": ["Sama-sama! Jika Anda memiliki pertanyaan lain, jangan ragu untuk mengajukannya. Selamat menikmati konser Coldplay!"]
     },
     {
       "tag": "fallback",
-      "patterns": [""],
-      "responses": ["Maaf, saya tidak dapat memahami permintaan Anda tentang konser Coldplay. Mohon beri tahu saya dengan kata lain atau ajukan pertanyaan yang berbeda.", "Maaf, sepertinya ada ketidakjelasan. Bisakah Anda mengajukan pertanyaan atau mengungkapkan kebutuhan Anda dengan kata lain?"]
+      "patterns": ["", " "],
+      "responses": ["Maaf, saya tidak dapat memahami pertanyaan Anda. Silakan ajukan pertanyaan lain atau gunakan kata kunci yang berbeda."]
     }
   ]
 }
