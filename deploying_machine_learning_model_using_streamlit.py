@@ -1,4 +1,3 @@
-import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn import svm
@@ -28,5 +27,4 @@ test_data_accuracy = accuracy_score(X_test_prediction, Y_test)
 
 print('Accuracy score of the test data : ', test_data_accuracy)
 
-filename = 'diabetes_model.sav'
-pickle.dump(classifier, open(filename, 'wb'))
+pickle.dump(classifier, open('diabetes_model.sav', 'wb'))

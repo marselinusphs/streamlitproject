@@ -22,11 +22,12 @@ def predict(image):
     yhat = model.predict(image)
 
     # convert the probabilities to class labels
-    label = decode_predictions(yhat)
+    label = decode_predictions(yhat, top = 5)
 
     # retrieve the most likely result, e.g. highest probability
     label = label[0][0]
     return label
+
 
 if __name__ == '__main__':
     st.title("Upload + Classification Example")
