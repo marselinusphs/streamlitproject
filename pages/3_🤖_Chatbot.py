@@ -1,18 +1,17 @@
 import streamlit as st
-from streamlit_chat import message
-
 import nltk
-nltk.download('punkt')
-nltk.download('wordnet')
-from nltk.stem import WordNetLemmatizer
-lemmatizer = WordNetLemmatizer()
 import pickle
 import numpy as np
-
-from keras.models import load_model
-model = load_model('chatbot_model.h5')
-import json
 import random
+import json
+from streamlit_chat import message
+from nltk.stem import WordNetLemmatizer
+from keras.models import load_model
+nltk.download('punkt')
+nltk.download('wordnet')
+
+lemmatizer = WordNetLemmatizer()
+model = load_model('chatbot_model.h5')
 intents = json.loads(open('intents.json').read())
 words = pickle.load(open('words.pkl', 'rb'))
 classes = pickle.load(open('classes.pkl', 'rb'))
@@ -33,7 +32,7 @@ def bow(sentence, words, show_details=True):
     # bag of words - matrix of N words, vocabulary matrix
     bag = [0]*len(words)
     for s in sentence_words:
-        for i,w in enumerate(words):
+        for i, w in enumerate(words):
             if w == s:
                 # assign 1 if current word is in the vocabulary position
                 bag[i] = 1
@@ -77,25 +76,26 @@ def get_text():
     return input_text
 
 
-st.title("chatBot : Streamlit + openAI")
+if __name__ == '__main__':
+    st.title("Coldplay Event Chatbot")
 
-# Storing the chat
-if 'generated' not in st.session_state:
-    st.session_state['generated'] = []
+    # Storing the chat
+    if 'generated' not in st.session_state:
+        st.session_state['generated'] = []
 
-if 'past' not in st.session_state:
-    st.session_state['past'] = []
+    if 'past' not in st.session_state:
+        st.session_state['past'] = []
 
-user_input = get_text()
+    user_input = get_text()
 
-if user_input:
-    output = chatbot_response(user_input)
+    if user_input:
+        output = chatbot_response(user_input)
 
-    # store the output
-    st.session_state.past.append(user_input)
-    st.session_state.generated.append(output)
+        # store the output
+        st.session_state.past.append(user_input)
+        st.session_state.generated.append(output)
 
-if st.session_state['generated']:
-    for i in range(len(st.session_state['generated']) - 1, -1, -1):
-        message(st.session_state["generated"][i], key=str(i))
-        message(st.session_state['past'][i], is_user=True, key=str(i) + '_user')
+    if st.session_state['generated']:
+        for i in range(len(st.session_state['generated']) - 1, -1, -1):
+            message(st.session_state["generated"][i], key=str(i))
+            message(st.session_state['past'][i], is_user=True, key=str(i) + '_user')
