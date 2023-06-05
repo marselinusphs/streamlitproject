@@ -22,7 +22,7 @@ def predict(image):
     yhat = model.predict(image)
 
     # convert the probabilities to class labels
-    label = decode_predictions(yhat, top = 5)
+    label = decode_predictions(yhat, top=5)
 
     # retrieve the most likely result, e.g. highest probability
     # label = label[0][0]
@@ -38,4 +38,5 @@ if __name__ == '__main__':
         st.image(image, caption='Uploaded Image.', use_column_width=True)
         st.write("Classifying...")
         label = predict(uploaded_file)
-        st.write('%s (%.2f%%)' % (label[1], label[2]*100))
+        # st.write('%s (%.2f%%)' % (label[1], label[2]*100))
+        st.write(label)
