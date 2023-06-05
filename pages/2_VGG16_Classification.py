@@ -37,4 +37,4 @@ if __name__ == '__main__':
         image = Image.open(uploaded_file)
         st.image(image, caption='Uploaded Image.', use_column_width=True)
         label = predict(uploaded_file)
-        st.write('%s (%.2f%%)' % (label[1], label[2]*100))
+        st.success('%s (%.2f%%)' % (label[1], label[2]*100))
