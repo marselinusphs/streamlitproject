@@ -1,9 +1,9 @@
 import streamlit as st
-nltk.download('punkt')
-nltk.download('wordnet')
 from streamlit_chat import message
 
 import nltk
+nltk.download('punkt')
+nltk.download('wordnet')
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 import pickle
