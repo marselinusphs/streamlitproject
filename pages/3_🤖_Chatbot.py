@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_chat import message
 
 import nltk
 from nltk.stem import WordNetLemmatizer
@@ -44,7 +45,7 @@ def predict_class(sentence, model):
     p = bow(sentence, words,show_details=False)
     res = model.predict(np.array([p]))[0]
     ERROR_THRESHOLD = 0.25
-    results = [[i,r] for i,r in enumerate(res) if r>ERROR_THRESHOLD]
+    results = [[i, r] for i, r in enumerate(res) if r > ERROR_THRESHOLD]
     # sort by strength of probability
     results.sort(key=lambda x: x[1], reverse=True)
     return_list = []
@@ -57,7 +58,7 @@ def getResponse(ints, intents_json):
     tag = ints[0]['intent']
     list_of_intents = intents_json['intents']
     for i in list_of_intents:
-        if(i['tag']== tag):
+        if i['tag']== tag:
             result = random.choice(i['responses'])
             break
     return result
@@ -68,14 +69,31 @@ def chatbot_response(msg):
     res = getResponse(ints, intents)
     return res
 
+
 def get_text():
-    input_text = st.text_input("You: ","Hello, how are you?", key="input")
+    input_text = st.text_input("You: ", "Hai", key="input")
     return input_text
 
-#Creating the chatbot interface
+
 st.title("chatBot : Streamlit + openAI")
-from streamlit_chat import message
+
+# Storing the chat
+if 'generated' not in st.session_state:
+    st.session_state['generated'] = []
+
+if 'past' not in st.session_state:
+    st.session_state['past'] = []
 
 user_input = get_text()
-message("My message")
-message("Hello bot!", is_user=True)  # align's the message to the right
+
+if user_input:
+    output = chatbot_response(user_input)
+
+    # store the output
+    st.session_state.past.append(user_input)
+    st.session_state.generated.append(output)
+
+if st.session_state['generated']:
+    for i in range(len(st.session_state['generated']) - 1, -1, -1):
+        message(st.session_state["generated"][i], key=str(i))
+        message(st.session_state['past'][i], is_user=True, key=str(i) + '_user')
