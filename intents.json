@@ -47,7 +47,7 @@
     },
     {
       "tag": "fallback",
-      "patterns": ["", "Tidak mengerti", "Bisakah Anda mengulanginya?", "Saya tidak mengerti jawaban Anda"],
+      "patterns": [""],
       "responses": ["Maaf, saya tidak dapat memahami permintaan Anda tentang konser Coldplay. Mohon beri tahu saya dengan kata lain atau ajukan pertanyaan yang berbeda.", "Maaf, sepertinya ada ketidakjelasan. Bisakah Anda mengajukan pertanyaan atau mengungkapkan kebutuhan Anda dengan kata lain?"]
     }
   ]
