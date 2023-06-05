@@ -68,10 +68,14 @@ def chatbot_response(msg):
     res = getResponse(ints, intents)
     return res
 
+def get_text():
+    input_text = st.text_input("You: ","Hello, how are you?", key="input")
+    return input_text
 
 #Creating the chatbot interface
 st.title("chatBot : Streamlit + openAI")
 from streamlit_chat import message
 
+user_input = get_text()
 message("My message")
 message("Hello bot!", is_user=True)  # align's the message to the right
