@@ -25,7 +25,7 @@ def predict(image):
     label = decode_predictions(yhat, top = 5)
 
     # retrieve the most likely result, e.g. highest probability
-    label = label[0][0]
+    # label = label[0][0]
     return label
 
 
